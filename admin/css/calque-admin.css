@@ -1,4 +1,40 @@
-/**
- * All of the CSS for your admin-specific functionality should be
- * included in this file.
- */
+.calque-wrap {
+	max-width: 760px;
+}
+
+.calque-lead {
+	font-size: 14px;
+	color: #50575e;
+}
+
+.calque-card {
+	background: #fff;
+	border: 1px solid #dcdcde;
+	padding: 4px 20px 16px;
+	margin: 16px 0;
+}
+
+.calque-uri {
+	max-width: 100%;
+}
+
+.calque-status {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 3px;
+	font-weight: 600;
+}
+
+.calque-status.is-on {
+	background: #edfaef;
+	color: #007017;
+}
+
+.calque-status.is-off {
+	background: #fcf0f1;
+	color: #8a2424;
+}
+
+.calque-error {
+	color: #8a2424;
+}

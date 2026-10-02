@@ -1,0 +1,30 @@
+# --- OS / Editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*~
+
+# --- Cursor ---
+.cursor/
+
+# --- Specifications (kept local, not shipped) ---
+calque-plugin-specs.md
+calque-plugin-specs.txt
+TECH-STACK.md
+
+# --- Dependencies ---
+vendor/
+node_modules/
+
+# --- Build ---
+*.map
+*.log
+npm-debug.log*
+
+# --- Scripts / dumps locaux ---
+_tmp_*.php
+*.sql
+*.sql.gz
+*.zip

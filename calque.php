@@ -17,6 +17,8 @@
  * Plugin URI:        https://github.com/lotfim
  * Description:       Mirror BookingPress appointments on a Google Calendar: a one-shot import that skips bookings already sent, then automatic create, update, and cancel.
  * Version:           1.0.0
+ * Requires at least: 6.8
+ * Requires PHP:      8.3
  * Author:            Lotfi MANSEUR
  * Author URI:        https://github.com/lotfim/
  * License:           GPL-2.0+
@@ -36,6 +38,9 @@ if ( ! defined( 'WPINC' ) ) {
  * Rename this for your plugin and update it as you release new versions.
  */
 define( 'CALQUE_VERSION', '1.0.0' );
+define( 'CALQUE_PLUGIN_FILE', __FILE__ );
+define( 'CALQUE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'CALQUE_BOOKINGPRESS_URL', 'https://www.bookingpressplugin.com/' );
 
 /**
  * The code that runs during plugin activation.

@@ -1,0 +1,197 @@
+# Copyright (C) 2026 Lotfi MANSEUR
+# This file is distributed under the GPL-2.0+.
+msgid ""
+msgstr ""
+"Project-Id-Version: Calque 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/lotfim\n"
+"Last-Translator: Lotfi MANSEUR\n"
+"Language-Team: French\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Domain: calque\n"
+
+msgid "Calque"
+msgstr "Calque"
+
+msgid "Mirror BookingPress appointments on a Google Calendar: a one-shot import that skips bookings already sent, then automatic create, update, and cancel."
+msgstr "Recopie les rendez-vous BookingPress sur un Google Calendar : import en une fois sans doublon, puis création, modification et annulation automatiques."
+
+msgid "Mirror BookingPress appointments onto one Google Calendar."
+msgstr "Recopier les rendez-vous BookingPress sur un seul Google Calendar."
+
+msgid "Calque requires BookingPress Appointment Booking. <a href=\"%s\">Install it from the BookingPress website</a>."
+msgstr "Calque a besoin de BookingPress Appointment Booking. <a href=\"%s\">Installez-le depuis le site BookingPress</a>."
+
+msgid "Settings saved."
+msgstr "Réglages enregistrés."
+
+msgid "Google Calendar is connected. Choose a calendar and save."
+msgstr "Google Calendar est connecté. Choisissez un calendrier, puis enregistrez."
+
+msgid "Disconnected from Google Calendar."
+msgstr "Déconnecté de Google Calendar."
+
+msgid "1 appointment was sent to Google Calendar."
+msgstr "1 rendez-vous a été envoyé vers Google Calendar."
+
+msgid "%d appointments were sent to Google Calendar."
+msgstr "%d rendez-vous ont été envoyés vers Google Calendar."
+
+msgid "1 already linked booking was left untouched."
+msgstr "1 réservation déjà liée n’a pas été renvoyée."
+
+msgid "%d already linked bookings were left untouched."
+msgstr "%d réservations déjà liées n’ont pas été renvoyées."
+
+msgid "1 appointment could not be sent."
+msgstr "1 rendez-vous n’a pas pu être envoyé."
+
+msgid "%d appointments could not be sent."
+msgstr "%d rendez-vous n’ont pas pu être envoyés."
+
+msgid "Google connection"
+msgstr "Connexion Google"
+
+msgid "Connected"
+msgstr "Connecté"
+
+msgid "Not connected"
+msgstr "Non connecté"
+
+msgid "Client ID"
+msgstr "Client ID"
+
+msgid "Client secret"
+msgstr "Client secret"
+
+msgid "A secret is saved. Leave this blank to keep it."
+msgstr "Un secret est déjà enregistré. Laissez vide pour le conserver."
+
+msgid "Redirect URI"
+msgstr "URI de redirection"
+
+msgid "Add this URI to the Google Cloud OAuth client."
+msgstr "Ajoutez cette URI au client OAuth Google Cloud."
+
+msgid "Calendar"
+msgstr "Calendrier"
+
+msgid "Select a calendar"
+msgstr "Choisir un calendrier"
+
+msgid "Refresh calendar list"
+msgstr "Actualiser la liste des calendriers"
+
+msgid "Save settings"
+msgstr "Enregistrer les réglages"
+
+msgid "Account"
+msgstr "Compte"
+
+msgid "Disconnect"
+msgstr "Déconnecter"
+
+msgid "Connect Google Calendar"
+msgstr "Connecter Google Calendar"
+
+msgid "Save a Client ID and Client secret, then connect the calendar."
+msgstr "Enregistrez un Client ID et un Client secret, puis connectez le calendrier."
+
+msgid "Existing appointments"
+msgstr "Rendez-vous existants"
+
+msgid "Send appointments that are not on Google Calendar yet. Bookings already linked are skipped, including ones that were later cancelled."
+msgstr "Envoie les rendez-vous qui ne sont pas encore sur Google Calendar. Les réservations déjà liées sont ignorées, y compris celles annulées ensuite."
+
+msgid "Sync existing appointments"
+msgstr "Synchroniser les rendez-vous existants"
+
+msgid "Connect a calendar and keep BookingPress active to enable this."
+msgstr "Connectez un calendrier et laissez BookingPress actif pour activer ceci."
+
+msgid "Settings"
+msgstr "Réglages"
+
+msgid "Google authorization was cancelled."
+msgstr "L’autorisation Google a été annulée."
+
+msgid "You are not allowed to change these settings."
+msgstr "Vous n’êtes pas autorisé à modifier ces réglages."
+
+msgid "You are not allowed to sync appointments."
+msgstr "Vous n’êtes pas autorisé à synchroniser les rendez-vous."
+
+msgid "BookingPress is not active."
+msgstr "BookingPress n’est pas actif."
+
+msgid "Connect Google Calendar and choose a calendar before syncing."
+msgstr "Connectez Google Calendar et choisissez un calendrier avant de synchroniser."
+
+msgid "Calque storage is not ready. Activate the plugin again."
+msgstr "Le stockage Calque n’est pas prêt. Activez à nouveau l’extension."
+
+msgid "The appointment no longer exists."
+msgstr "Le rendez-vous n’existe plus."
+
+msgid "Booking ID: %s"
+msgstr "N° de réservation : %s"
+
+msgid "Service: %s"
+msgstr "Prestation : %s"
+
+msgid "Customer: %s"
+msgstr "Client : %s"
+
+msgid "Email: %s"
+msgstr "E-mail : %s"
+
+msgid "Phone: %s"
+msgstr "Téléphone : %s"
+
+msgid "Status: %s"
+msgstr "Statut : %s"
+
+msgid "Note: %s"
+msgstr "Note : %s"
+
+msgid "Approved"
+msgstr "Approuvé"
+
+msgid "Pending"
+msgstr "En attente"
+
+msgid "Cancelled"
+msgstr "Annulé"
+
+msgid "Rejected"
+msgstr "Refusé"
+
+msgid "Unknown"
+msgstr "Inconnu"
+
+msgid "Save a Google Client ID and Client secret before connecting."
+msgstr "Enregistrez un Client ID et un Client secret Google avant de vous connecter."
+
+msgid "Invalid authorization state. Try connecting again."
+msgstr "État d’autorisation invalide. Réessayez la connexion."
+
+msgid "Google did not return a refresh token. Remove Calque from your Google account permissions, then connect again."
+msgstr "Google n’a pas renvoyé de jeton de rafraîchissement. Retirez Calque des autorisations du compte Google, puis reconnectez-vous."
+
+msgid "The Google Calendar event could not be created."
+msgstr "L’événement Google Calendar n’a pas pu être créé."
+
+msgid "Google Calendar is not connected."
+msgstr "Google Calendar n’est pas connecté."
+
+msgid "Google did not return an access token."
+msgstr "Google n’a pas renvoyé de jeton d’accès."
+
+msgid "Unknown Google error."
+msgstr "Erreur Google inconnue."
+
+msgid "Google Calendar returned an error (%1$d): %2$s"
+msgstr "Google Calendar a renvoyé une erreur (%1$d) : %2$s"

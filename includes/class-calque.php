@@ -77,7 +77,6 @@ class Calque {
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_admin_hooks();
-		$this->define_public_hooks();
 
 	}
 
@@ -104,23 +103,14 @@ class Calque {
 		 * core plugin.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-calque-loader.php';
-
-		/**
-		 * The class responsible for defining internationalization functionality
-		 * of the plugin.
-		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-calque-i18n.php';
-
-		/**
-		 * The class responsible for defining all actions that occur in the admin area.
-		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-calque-dependency.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-calque-settings.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-calque-links.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-calque-activator.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-calque-google.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-calque-sync.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-calque-admin.php';
-
-		/**
-		 * The class responsible for defining all actions that occur in the public-facing
-		 * side of the site.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-calque-public.php';
 
 		$this->loader = new Calque_Loader();
 
@@ -152,26 +142,26 @@ class Calque {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Calque_Admin( $this->get_plugin_name(), $this->get_version() );
+		$sync         = new Calque_Sync();
+		$plugin_admin = new Calque_Admin( $this->get_plugin_name(), $this->get_version(), $sync );
 
+		$this->loader->add_action( 'plugins_loaded', 'Calque_Activator', 'maybe_install' );
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_menu' );
+		$this->loader->add_action( 'admin_notices', $plugin_admin, 'dependency_notice' );
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'handle_oauth_callback' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		$this->loader->add_action( 'admin_post_calque_save_settings', $plugin_admin, 'save_settings' );
+		$this->loader->add_action( 'admin_post_calque_disconnect', $plugin_admin, 'disconnect' );
+		$this->loader->add_action( 'admin_post_calque_sync_existing', $plugin_admin, 'sync_existing' );
+		$this->loader->add_filter( 'plugin_action_links_' . plugin_basename( CALQUE_PLUGIN_FILE ), $plugin_admin, 'plugin_action_links' );
 
-	}
-
-	/**
-	 * Register all of the hooks related to the public-facing functionality
-	 * of the plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
-	private function define_public_hooks() {
-
-		$plugin_public = new Calque_Public( $this->get_plugin_name(), $this->get_version() );
-
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+		$this->loader->add_action( 'shutdown', $sync, 'flush_queue' );
+		$this->loader->add_action( 'bookingpress_form_v3_after_booking', $sync, 'queue_appointment' );
+		$this->loader->add_action( 'bookingpress_after_insert_appointment', $sync, 'queue_appointment' );
+		$this->loader->add_action( 'bookingpress_after_update_appointment', $sync, 'queue_appointment' );
+		$this->loader->add_action( 'bookingpress_after_change_appointment_status', $sync, 'queue_appointment' );
+		$this->loader->add_action( 'bookingpress_after_cancel_appointment', $sync, 'queue_appointment' );
+		$this->loader->add_action( 'bookingpress_after_cancel_appointment_without_check_payment', $sync, 'queue_appointment' );
 
 	}
 
